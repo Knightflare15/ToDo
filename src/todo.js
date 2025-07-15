@@ -1,27 +1,19 @@
 import { openTodoModal } from "./modaltodo";
+import { addTodoItem } from "./project";
+import { projects,saveProjectsToStorage } from "./index.js";
 import "./todo.css"
+
 export function addTodo(projectCard) {
-  let todoList = projectCard.querySelector('.todo-list');
-  if (!todoList) {
-    todoList = document.createElement('ul');
-    todoList.className = 'todo-list';
-    projectCard.appendChild(todoList);
-  }
+  openTodoModal((todoText) => {
+    if (!todoText) return;
 
-    openTodoModal((todoText) => {
-      const todoItem = document.createElement('li');
-      todoItem.className = 'todo-item';
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.className = 'todo-checkbox';
+    addTodoItem(projectCard, todoText, false);
 
-      const label = document.createElement('span');
-      label.textContent = todoText;
-
-      todoItem.appendChild(checkbox);
-      todoItem.appendChild(label);
-
-      todoList.appendChild(todoItem);
-    });
-
+    const projectTitle = projectCard.querySelector('h2').textContent;
+    const project = projects.find(p => p.title === projectTitle);
+    if (project) {
+      project.todos.push({ text: todoText, completed: false });
+      saveProjectsToStorage(projects);
+    }
+  });
 }
