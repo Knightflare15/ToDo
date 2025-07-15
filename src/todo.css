@@ -1,0 +1,27 @@
+/* todo.css */
+.todo-list {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  background-color: #FFF9BD;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.todo-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #A3DC9A; /* Matches your header green */
+  cursor: pointer;
+  margin-right: 8px;
+}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToDo or not ToDo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>ToDo or not ToDo</h1>
+    </header>
+    <div class="content">
+        <div class="projects"></div>
+        <button class="add-button">+</button>
+    </div>
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-box">
+            <h2>Name Your Project</h2>
+            <input type="text" id="project-name-input" placeholder="Enter project name" />
+        <div class="modal-buttons">
+        <button id="modal-create">Create</button>
+        <button id="modal-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="todo-modal" style="display:none;">
+  <div class="modal-box">
+    <h2>Add New Todo</h2>
+    <input type="text" id="todo-name-input" placeholder="Enter todo item" />
+    <div class="modal-buttons">
+      <button id="todo-create">Add</button>
+      <button id="todo-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
