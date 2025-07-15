@@ -1,6 +1,6 @@
 import {addTodo} from "./todo.js"
 import {projects,saveProjectsToStorage} from "./index.js"
-export function addProjectCard(title,todo=[]) {
+export function addProjectCard(title,todos=[]) {
   const projectsContainer = document.querySelector('.projects');
   if (!projectsContainer) return;
   const card = document.createElement('div');
@@ -10,7 +10,7 @@ export function addProjectCard(title,todo=[]) {
     <button class="todo-button">Add Todo</button>
   `;
   projectsContainer.appendChild(card);
-  todo.forEach(todos=>{
+  todos.forEach(todo=>{
     addTodoItem(card,todo.text,todo.completed);
   })
 const todoButton = card.querySelector('.todo-button');
